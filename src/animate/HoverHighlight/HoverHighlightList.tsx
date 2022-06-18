@@ -1,5 +1,6 @@
 import React from 'react';
 import { LayoutGroup } from 'framer-motion';
+import { Slot } from '@/components/Slot';
 import { HoverContext } from './HoverContext';
 
 type Props = {
@@ -10,13 +11,11 @@ type Props = {
 export const HoverHighlightList: React.FC<Props> = ({ children, id }) => {
   const [hovered, setHover] = React.useState(-1);
 
-  const newChildren = React.cloneElement(children as React.ReactElement, {
-    onMouseLeave: () => setHover(-1),
-  });
-
   return (
     <HoverContext.Provider value={{ hovered, setHover }}>
-      <LayoutGroup id={id}>{newChildren}</LayoutGroup>
+      <LayoutGroup id={id}>
+        <Slot onMouseLeave={() => setHover(-1)}>{children}</Slot>
+      </LayoutGroup>
     </HoverContext.Provider>
   );
 };
