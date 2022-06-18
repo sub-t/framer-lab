@@ -6,7 +6,7 @@ import { HoverMove } from '@/animate/HoverMove';
 import logo from '@/logo.svg';
 import '@/App.css';
 import { Aaaa } from './components/Aaaa';
-import { MyButtonGroup } from './components/MyButtonGroup';
+import { MyList } from './components/MyList';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,11 +20,14 @@ function App() {
         <Enter>
           <p>Hello Vite + React!</p>
         </Enter>
-        <Enter custom={{duration: 2}}>
+        <Enter custom={{ duration: 2 }}>
           <HoverMove custom={{ duration: 0.5 }}>
             <HoverMove custom={{ x: -20 }}>
               <p>
-                <button type="button" onClick={() => setCount((count) => count + 1)}>
+                <button
+                  type="button"
+                  onClick={() => setCount((count) => count + 1)}
+                >
                   count is: {count}
                 </button>
               </p>
@@ -57,7 +60,7 @@ function App() {
         </p>
       </header>
       <List></List>
-      <MyButtonGroup></MyButtonGroup>
+      <MyList></MyList>
     </div>
   );
 }

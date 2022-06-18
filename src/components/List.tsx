@@ -5,7 +5,7 @@ import {
 import { HoverMove } from '@/animate/HoverMove';
 
 export const List = () => (
-  <HoverHighlightList>
+  <HoverHighlightList id="List">
     <div className="flex flex-wrap gap-2">
       {Array.from({ length: 10 }).map((item, idx) => (
         <HoverMove key={idx}>

@@ -4,16 +4,19 @@ import { HoverContext } from './HoverContext';
 
 type Props = {
   children: React.ReactNode;
+  id?: string;
 };
 
-export const HoverHighlightList: React.FC<Props> = ({ children }) => {
+export const HoverHighlightList: React.FC<Props> = ({ children, id }) => {
   const [hovered, setHover] = React.useState(-1);
+
+  const newChildren = React.cloneElement(children as React.ReactElement, {
+    onMouseLeave: () => setHover(-1),
+  });
 
   return (
     <HoverContext.Provider value={{ hovered, setHover }}>
-      <div onMouseLeave={() => setHover(-1)}>
-        <LayoutGroup id={children?.toString()}>{children}</LayoutGroup>
-      </div>
+      <LayoutGroup id={id}>{newChildren}</LayoutGroup>
     </HoverContext.Provider>
   );
 };
