@@ -6,6 +6,7 @@ import { HoverMove } from '@/animate/HoverMove';
 import logo from '@/logo.svg';
 import '@/App.css';
 import { Aaaa } from './components/Aaaa';
+import { MyButtonGroup } from './components/MyButtonGroup';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -56,6 +57,7 @@ function App() {
         </p>
       </header>
       <List></List>
+      <MyButtonGroup></MyButtonGroup>
     </div>
   );
 }
