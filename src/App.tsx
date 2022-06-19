@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import { Card } from '@/components/Card';
 import { List } from '@/components/List';
 import { Enter } from '@/animate/Enter';
 import { HoverMove } from '@/animate/HoverMove';
 import logo from '@/logo.svg';
 import '@/App.css';
-import { Aaaa } from './components/Aaaa';
 import { MyList } from './components/MyList';
 
 function App() {
@@ -13,8 +11,6 @@ function App() {
 
   return (
     <div className="App">
-      <Card title={''}></Card>
-      <Aaaa></Aaaa>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Enter>
