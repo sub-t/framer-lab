@@ -5,6 +5,7 @@ import { HoverMove } from '@/animate/HoverMove';
 import logo from '@/logo.svg';
 import '@/App.css';
 import { MyList } from './components/MyList';
+import { Test } from './components/Test';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -57,6 +58,7 @@ function App() {
       </header>
       <List></List>
       <MyList></MyList>
+      <Test></Test>
     </div>
   );
 }
