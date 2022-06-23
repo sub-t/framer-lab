@@ -1,6 +1,6 @@
 import React from 'react';
 import { Slot } from '@radix-ui/react-slot';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 const Container = motion(Slot);
 
@@ -21,7 +21,7 @@ const defaultCustom: Custom = {
 const config = (custom?: Custom): React.ComponentProps<typeof Container> => {
   const { y, once, amount, duration } = { ...defaultCustom, ...custom };
 
-  return {
+  const variants: Variants = {
     initial: {
       opacity: 0,
       y,
@@ -30,6 +30,12 @@ const config = (custom?: Custom): React.ComponentProps<typeof Container> => {
       opacity: 1,
       y: 0,
     },
+  };
+
+  return {
+    variants,
+    initial: 'initial',
+    whileInView: 'whileInView',
     viewport: {
       once,
       amount,
